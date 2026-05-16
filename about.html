@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -106,6 +106,71 @@
     </div>
   </section>
 
+  <!-- ======= FACTORY TOUR ======= -->
+  <section class="factory-tour-section" style="background: white; padding: 60px 0;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px; text-align: center;">
+        <span class="section-label">Inside Hemee</span>
+        <h2>Our Manufacturing Facility</h2>
+        <p>A glimpse into our world-class infrastructure and operational excellence.</p>
+      </div>
+      <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="mySlides">
+          <img src="images/aboutUS/image.png" alt="Factory View 1">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy.png" alt="Factory View 2">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%202.png" alt="Factory View 3">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%203.png" alt="Factory View 4">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%204.png" alt="Factory View 5">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%205.png" alt="Factory View 6">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%206.png" alt="Factory View 7">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%207.png" alt="Factory View 8">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%208.png" alt="Factory View 9">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%209.png" alt="Factory View 10">
+        </div>
+        <div class="mySlides">
+          <img src="images/aboutUS/image%20copy%2010.png" alt="Factory View 11">
+        </div>
+
+        <!-- Next/prev buttons -->
+        <button type="button" class="slideshow-prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</button>
+        <button type="button" class="slideshow-next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</button>
+      </div>
+      <!-- The Dots/circles -->
+      <div class="dot-container">
+        <button type="button" class="slide-dot" onclick="currentSlide(1)" aria-label="Slide 1"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(2)" aria-label="Slide 2"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(3)" aria-label="Slide 3"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(4)" aria-label="Slide 4"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(5)" aria-label="Slide 5"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(6)" aria-label="Slide 6"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(7)" aria-label="Slide 7"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(8)" aria-label="Slide 8"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(9)" aria-label="Slide 9"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(10)" aria-label="Slide 10"></button>
+        <button type="button" class="slide-dot" onclick="currentSlide(11)" aria-label="Slide 11"></button>
+      </div>
+    </div>
+  </section>
+
   <!-- ======= CORE VALUES ======= -->
   <section class="values-section">
     <div class="container">
@@ -208,17 +273,13 @@
         <div class="footer-col">
           <h4>Get In Touch</h4>
           <address>
-            <strong>USA Office:</strong><br>
-            11835 Rock Landing Dr,<br>
-            Newport News, VA 23606, USA<br><br>
             <strong>India Office:</strong><br>
             Opp. Jain Mandir, Nr. Nandasan Bridge,<br>
             Ahmedabad&ndash;Mehsana Highway,<br>
             Nandasan&ndash;382705, Ta: Kadi,<br>
             Dist: Mehsana, Gujarat<br><br>
             <a href="mailto:office@hemee.in">office@hemee.in</a><br>
-            <a href="mailto:info@hemeegroup.in">info@hemeegroup.in</a>
-          </address>
+            </address>
           <div class="footer-phones">
             <a href="tel:+918401552799">
               <span class="ph-ico">&#128241;</span>
@@ -228,11 +289,7 @@
               <span class="ph-ico">&#128222;</span>
               +91 95376 45654
             </a>
-            <a href="tel:+17576188170">
-              <span class="ph-ico">&#127482;&#127480;</span>
-              +1 (757) 618-8170
-            </a>
-          </div>
+            </div>
         </div>
 
       </div>
@@ -244,6 +301,44 @@
     </div>
   </footer>
 
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Auto play
+    setInterval(function() {
+      plusSlides(1);
+    }, 4000);
+
+    function plusSlides(n) {
+      slideIndex += n;
+      showSlides(slideIndex);
+    }
+
+    function currentSlide(n) {
+      slideIndex = n;
+      showSlides(slideIndex);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("slide-dot");
+      if (!slides.length) return;
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active-dot", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      if (dots.length > 0) {
+        dots[slideIndex-1].className += " active-dot";
+      }
+    }
+  </script>
 </body>
 </html>
 
