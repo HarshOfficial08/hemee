@@ -32,7 +32,6 @@ The company is dedicated to providing exceptional products across a diverse rang
 | USA Phone | +1 (757) 618-8170 |
 | WhatsApp | +91 84015 52799 |
 | Email 1 | office@hemee.in |
-| Email 2 | info@hemeegroup.in |
 | Website | www.hemeegroup.in |
 
 ---
@@ -235,7 +234,7 @@ Our R&D initiatives are guided by a thorough understanding of industry trends an
 ## CONTACT DETAILS (REFERENCE)
 
 - **Website:** www.hemeegroup.in
-- **Email:** office@hemee.in | info@hemeegroup.in
+- **Email:** office@hemee.in 
 - **India Phone:** +91 84015 52799 | +91 95376 45654
 - **USA Phone:** +1 (757) 618-8170
 - **WhatsApp:** +91 84015 52799
@@ -286,7 +285,6 @@ Through Hemee, investors gain access to a company with a proven track record in 
 | Phone 2 | +91 95376 45654 |
 | WhatsApp | +91 84015 52799 |
 | Email | office@hemee.in |
-| Email 2 | info@hemeegroup.in |
 | Website | www.hemeegroup.in |
 
 ### 8.2 USA Commercial Office
@@ -299,7 +297,7 @@ Through Hemee, investors gain access to a company with a proven track record in 
 
 ### 8.3 Connect With Us
 - **Website:** https://hemeegroup.in/
-- **Email:** office@hemee.in | info@hemeegroup.in
+- **Email:** office@hemee.in 
 
 ---
 
@@ -409,7 +407,7 @@ Below is the complete map of all pages and sub-pages available on the Hemee Inte
 > *Your Trusted Partner in Quality Castor Oil & Derivative Solutions*
 
 - India: +91 84015 52799 | +91 95376 45654 | USA: +1 (757) 618-8170
-- office@hemee.in | info@hemeegroup.in | www.hemeegroup.in
+- office@hemee.in  | www.hemeegroup.in
 - Opp. Jain Mandir, Nr. Nandasan Bridge, Ahmedabad–Mehsana Highway, Nandasan–382705, Gujarat, India
 - 11835 Rock Landing Dr, Newport News, VA 23606, USA
 

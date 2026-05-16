@@ -1,7 +1,7 @@
 // products.js — Category expand / collapse toggle
 function toggleCategory(headerEl) {
-  var card = headerEl.closest('.category-card');
-  var isOpen = card.classList.contains('open');
+  const card = headerEl.closest('.category-card');
+  const isOpen = card.classList.contains('open');
 
   // Close all cards first
   document.querySelectorAll('.category-card').forEach(function (c) {
@@ -16,10 +16,10 @@ function toggleCategory(headerEl) {
 
 // Open card if URL hash matches its id
 (function () {
-  var hash = window.location.hash;
+  const hash = globalThis.location.hash;
   if (hash) {
-    var target = document.querySelector(hash);
-    if (target && target.classList.contains('category-card')) {
+    const target = document.querySelector(hash);
+    if (target?.classList.contains('category-card')) {
       // Close all, then open target
       document.querySelectorAll('.category-card').forEach(function (c) {
         c.classList.remove('open');
@@ -55,7 +55,8 @@ const dummyProductData = {
     "Bulk in Flexi Tank",
     "Bulk in Vessel"
   ],
-  shelfLife: "2 years"
+  shelfLife: "2 years",
+  applications: "Widely used in lubricants, paints, surface coatings, pharmaceuticals, cosmetics, and polymer industries."
 };
 
 const productImageMap = {
@@ -76,6 +77,7 @@ function openProductModal(productName) {
   const tableBody = document.getElementById('modalTableBody');
   const packingList = document.getElementById('modalPacking');
   const shelfLifeEl = document.getElementById('modalShelfLife');
+  const applicationsEl = document.getElementById('modalApplications');
   const inquiryBtn = document.getElementById('modalInquiryBtn');
 
   // Use dummy data for everything for now, just change the title
@@ -104,6 +106,11 @@ function openProductModal(productName) {
 
   // Populate Shelf Life
   shelfLifeEl.innerText = dummyProductData.shelfLife;
+
+  // Populate Applications
+  if (applicationsEl) {
+    applicationsEl.innerText = dummyProductData.applications;
+  }
 
   // Update Inquiry Link
   inquiryBtn.href = `contact.html?subject=Inquiry: ${encodeURIComponent(productName)}`;
