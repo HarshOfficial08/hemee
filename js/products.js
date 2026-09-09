@@ -113,7 +113,7 @@ function openProductModal(productName) {
   }
 
   // Update Inquiry Link
-  inquiryBtn.href = `contact.html?subject=Inquiry: ${encodeURIComponent(productName)}`;
+  inquiryBtn.href = `/contact?subject=Inquiry: ${encodeURIComponent(productName)}`;
 
   // Show Modal
   modal.classList.add('active');

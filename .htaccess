@@ -1,0 +1,81 @@
+# ============================================================
+# HEMEE GROUP - STATIC WEBSITE
+# ============================================================
+
+RewriteEngine On
+RewriteBase /
+
+# ------------------------------------------------------------
+# Disable server-side public caching
+# ------------------------------------------------------------
+<IfModule LiteSpeed>
+    CacheLookup off
+</IfModule>
+
+# ------------------------------------------------------------
+# Prevent browser/proxy caching
+# ------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+</IfModule>
+
+# ------------------------------------------------------------
+# Set DirectoryIndex
+# ------------------------------------------------------------
+DirectoryIndex /hemee/index.html index.html index.php
+
+
+# ============================================================
+# 1. 301 REDIRECTS (Clean URLs: remove index.html and .html)
+# ============================================================
+
+# Redirect /index.html and /index.php to /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.(html|php) [NC]
+RewriteRule ^index\.(html|php)$ / [R=301,L]
+
+# Redirect /hemee/index.html to /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /hemee/index\.html [NC]
+RewriteRule ^hemee/index\.html$ / [R=301,L]
+
+# Redirect any explicit .html page request to clean URL (e.g. /about.html -> /about)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(about|contact|infrastructure|innovations|products)\.html [NC]
+RewriteRule ^(about|contact|infrastructure|innovations|products)\.html$ /$1 [R=301,L]
+
+
+# ============================================================
+# 2. INTERNAL REWRITES (Serve files from /hemee/)
+# ============================================================
+
+# Homepage /
+RewriteRule ^$ /hemee/index.html [L]
+
+# Clean HTML Pages without .html extension
+RewriteRule ^about/?$ /hemee/about.html [L]
+RewriteRule ^contact/?$ /hemee/contact.html [L]
+RewriteRule ^infrastructure/?$ /hemee/infrastructure.html [L]
+RewriteRule ^innovations/?$ /hemee/innovations.html [L]
+RewriteRule ^products/?$ /hemee/products.html [L]
+
+# Fallback for direct .html requests if not redirected
+RewriteRule ^index\.html$ /hemee/index.html [L]
+RewriteRule ^about\.html$ /hemee/about.html [L]
+RewriteRule ^contact\.html$ /hemee/contact.html [L]
+RewriteRule ^infrastructure\.html$ /hemee/infrastructure.html [L]
+RewriteRule ^innovations\.html$ /hemee/innovations.html [L]
+RewriteRule ^products\.html$ /hemee/products.html [L]
+
+
+# ============================================================
+# 3. ASSETS & DIRECTORIES
+# ============================================================
+
+RewriteRule ^css/(.*)$ /hemee/css/$1 [L]
+RewriteRule ^js/(.*)$ /hemee/js/$1 [L]
+RewriteRule ^images/(.*)$ /hemee/images/$1 [L]
+RewriteRule ^documents/(.*)$ /hemee/documents/$1 [L]
+RewriteRule ^pdf/(.*)$ /hemee/pdf/$1 [L]
+
+# Allow direct access to /hemee/ assets/files if needed
+RewriteRule ^hemee/(.*)$ /hemee/$1 [L]
